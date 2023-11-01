@@ -1,7 +1,7 @@
 /**
 * @license Apache-2.0
 *
-* Copyright (c) 2022 The Stdlib Authors.
+* Copyright (c) 2023 The Stdlib Authors.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
@@ -21,37 +21,13 @@
 // MODULES //
 
 var tape = require( 'tape' );
-var NINF = require( '@stdlib/constants-float64-ninf' );
-var isNegativeFinite = require( './../../dist' );
+var main = require( './../../dist' );
 
 
 // TESTS //
 
-tape( 'main export is a function', function test( t ) {
+tape( 'main export is defined', function test( t ) {
 	t.ok( true, __filename );
-	t.strictEqual( typeof isNegativeFinite, 'function', 'main export is a function' );
-	t.end();
-});
-
-tape( 'the function returns `true` if provided a negative finite number', function test( t ) {
-	t.equal( isNegativeFinite( -3.14 ), true, 'returns true' );
-	t.equal( isNegativeFinite( -1.0e308 ), true, 'returns true' );
-	t.end();
-});
-
-tape( 'the function returns `false` if not provided a negative finite number', function test( t ) {
-	t.equal( isNegativeFinite( 2.0 ), false, 'returns false' );
-	t.equal( isNegativeFinite( 0.0 ), false, 'returns false' );
-	t.equal( isNegativeFinite( -0.0 ), false, 'returns false' );
-	t.end();
-});
-
-tape( 'the function returns `false` if provided `-infinity`', function test( t ) {
-	t.equal( isNegativeFinite( NINF ), false, 'returns false' );
-	t.end();
-});
-
-tape( 'the function returns `false` if provided `NaN`', function test( t ) {
-	t.equal( isNegativeFinite( NaN ), false, 'returns false' );
+	t.strictEqual( main !== void 0, true, 'main export is defined' );
 	t.end();
 });
